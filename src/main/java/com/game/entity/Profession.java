@@ -1,5 +1,7 @@
 package com.game.entity;
 
+import jakarta.persistence.*;
+
 public enum Profession {
     WARRIOR,
     ROGUE,
