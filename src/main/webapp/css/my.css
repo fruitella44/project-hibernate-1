@@ -1,12 +1,22 @@
 table, th, td {
     border: 1px solid black;
     border-collapse: collapse;
-    border-radius: 10px;
     padding: 3px;
 }
 
+
 th, td {
-    background-color: #96D4D4;
+    background-color: #a6b9e3;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 1px;
+}
+
+.counter-page {
+    display: flex;
+    margin: auto;
 }
 
 th:first-child {
@@ -75,11 +85,13 @@ th:nth-child(10) {
 
 .create {
     max-width: 275px;
+    margin-left: 520px;
 }
 
 .create__group {
     display: flex;
     justify-content: space-between;
+    width: 240px;
 }
 
 .create__group:not(:last-child) {

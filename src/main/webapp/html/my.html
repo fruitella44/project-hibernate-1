@@ -1,97 +1,113 @@
 <html>
 <head>
     <title>RPG</title>
+    <meta charset="UTF-8">
     <script src=https://code.jquery.com/jquery-3.6.0.min.js></script>
     <link href="/css/my.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
-<body onload="showList(0)">
-<h1>RPG admin panel</h1>
-<h2>Accounts list:</h2>
-<label for="count_1">Count per page:</label>
+<body onload="showList(0)" style="background-image: url('https://i.imgur.com/Lx7wS5J.jpeg')">
 
-<select name="count_1" id="count_1" onchange="showList(0)">
-    <option value="3">3</option>
-    <option value="5">5</option>
-    <option value="10">10</option>
-    <option value="20">20</option>
-</select>
+    <div class="container text-center">
+        <div class="row justify-content-md-center">
+            <h1 class="text-warning">RPG admin panel</h1>
+            <h2 class="text-warning">Accounts list:</h2>
+        </div>
+    </div>
 
-<table class="table_all" id="table_1">
-    <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Title</th>
-        <th>Race</th>
-        <th>Profession</th>
-        <th>Level</th>
-        <th>Birthday</th>
-        <th>Banned</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </tr>
-</table>
+    <div class="container text-center">
+        <div class="counter-page">
+            <label class="text-light" for="count_1">Count per page:</label>
+            <select name="count_1" id="count_1" onchange="showList(0)">
+                <option value="3">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+            </select>
+        </div>
 
-<div id="paging_buttons">Pages:</div>
+        <div class="row justify-content-md-center">
+            <table class="table table-sm" id="table_1">
+                <thead>
+                <tr>
+                    <th class="bg-light">Id</th>
+                    <th class="bg-light">Name</th>
+                    <th class="bg-light">Title</th>
+                    <th class="bg-light">Race</th>
+                    <th class="bg-light">Profession</th>
+                    <th class="bg-light">Level</th>
+                    <th class="bg-light">Birthday</th>
+                    <th class="bg-light">Banned</th>
+                    <th class="bg-light">Edit</th>
+                    <th class="bg-light">Delete</th>
+                </tr>
+                </thead>
+            </table>
+        </div>
 
-<hr>
-<h2>Create new account:</h2>
-<div class="create">
-    <div class="create__group">
-        <label for="input_name_new">Name:</label>
-        <input class="create__input" type="text" id="input_name_new" name="name" required maxlength="12">
-    </div>
-    <div class="create__group">
-        <label for="input_title_new">Title:</label>
-        <input class="create__input" type="text" id="input_title_new" title="name" required maxlength="30">
-    </div>
-    <div class="create__group">
-        <label for="input_race_new">Race:</label>
-        <select class="create__select" id="input_race_new" name='race'>
-            <option value='HUMAN'>HUMAN</option>
-            <option value='DWARF'>DWARF</option>
-            <option value='ELF'>ELF</option>
-            <option value='GIANT'>GIANT</option>
-            <option value='ORC'>ORC</option>
-            <option value='TROLL'>TROLL</option>
-            <option value='HOBBIT'>HOBBIT</option>
-        </select>
-    </div>
-    <div class="create__group">
-        <label for="input_profession_new">Profession:</label>
-        <select class="create__select" id="input_profession_new" name='profession'>
-            <option value='WARRIOR'>WARRIOR</option>
-            <option value='ROGUE'>ROGUE</option>
-            <option value='SORCERER'>SORCERER</option>
-            <option value='CLERIC'>CLERIC</option>
-            <option value='PALADIN'>PALADIN</option>
-            <option value='NAZGUL'>NAZGUL</option>
-            <option value='WARLOCK'>WARLOCK</option>
-            <option value='DRUID'>DRUID</option>
-        </select>
-    </div>
-    <div class="create__group">
-        <label for="input_level_new">Level:</label>
-        <input class="create__input" type="number" id="input_level_new" name="level" min="0" max="100">
-    </div>
-    <div class="create__group">
-        <label for="input_birthday_new">Birthday:</label>
-        <input class="create__input" type="date" id="input_birthday_new" name="birthday" min="2000-01-01" max="3000-12-31">
-    </div>
-    <div class="create__group">
-        <label for="input_banned_new">Banned:</label>
-        <select class="create__select" id="input_banned_new" name='banned'>
-            <option value='false'>false</option>
-            <option value='true'>true</option>
-        </select>
-    </div>
-    <div class="create__group">
+        <div class="text-light" id="paging_buttons">Pages:</div>
+
+        <hr>
+        <h2 class="text-warning">Create new account:</h2>
+        <div class="create">
+            <div class="create__group">
+                <label class="text-light" for="input_name_new">Name:</label>
+                <input class="create__input" type="text" id="input_name_new" name="name" required maxlength="12">
+            </div>
+            <div class="create__group">
+                <label class="text-light" for="input_title_new">Title:</label>
+                <input class="create__input" type="text" id="input_title_new" title="name" required maxlength="30">
+            </div>
+            <div class="create__group">
+                <label class="text-light" for="input_race_new">Race:</label>
+                <select class="create__select" id="input_race_new" name='race'>
+                    <option value='HUMAN'>HUMAN</option>
+                    <option value='DWARF'>DWARF</option>
+                    <option value='ELF'>ELF</option>
+                    <option value='GIANT'>GIANT</option>
+                    <option value='ORC'>ORC</option>
+                    <option value='TROLL'>TROLL</option>
+                    <option value='HOBBIT'>HOBBIT</option>
+                </select>
+            </div>
+            <div class="create__group">
+                <label class="text-light" for="input_profession_new">Profession:</label>
+                <select class="create__select" id="input_profession_new" name='profession'>
+                    <option value='WARRIOR'>WARRIOR</option>
+                    <option value='ROGUE'>ROGUE</option>
+                    <option value='SORCERER'>SORCERER</option>
+                    <option value='CLERIC'>CLERIC</option>
+                    <option value='PALADIN'>PALADIN</option>
+                    <option value='NAZGUL'>NAZGUL</option>
+                    <option value='WARLOCK'>WARLOCK</option>
+                    <option value='DRUID'>DRUID</option>
+                </select>
+            </div>
+            <div class="create__group">
+                <label class="text-light" for="input_level_new">Level:</label>
+                <input class="create__input" type="number" id="input_level_new" name="level" min="0" max="100">
+            </div>
+            <div class="create__group">
+                <label class="text-light" for="input_birthday_new">Birthday:</label>
+                <input class="create__input" type="date" id="input_birthday_new" name="birthday" min="2000-01-01" max="3000-12-31">
+            </div>
+            <div class="create__group">
+                <label class="text-light" for="input_banned_new">Banned:</label>
+                <select class="create__select" id="input_banned_new" name='banned'>
+                    <option value='false'>false</option>
+                    <option value='true'>true</option>
+                </select>
+            </div>
+            <div class="create__group">
         <span>
             <button type="submit" onclick='createAcc()'>
                 <img src="/img/save.png" alt="">
             </button>
         </span>
+            </div>
+        </div>
     </div>
-</div>
+
 <!--<label for="input_name_new">Name:</label>-->
 <!--<input type="text" id="input_name_new" name="name" required size="12" maxlength="12">-->
 <!--<br>-->
