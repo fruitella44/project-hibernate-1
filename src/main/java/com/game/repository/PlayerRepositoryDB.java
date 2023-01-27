@@ -22,8 +22,6 @@ public class PlayerRepositoryDB implements IPlayerRepository {
                 .addAnnotatedClass(Player.class)
                 .buildSessionFactory();
 
-        //Using hibernate.properties file to access to Database
-        //Hide in resources to secure a password from Database
     }
 
     @Override
